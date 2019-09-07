@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width" name="viewport">
+        <!-- css -->
+        <link rel="stylesheet" href="{% static 'logIn/css/logIn.css' %}">
+        <link rel="stylesheet" href="{% static 'logIn/css/form.css' %}">
+        <link rel="stylesheet" href="{% static 'base/css/base.css' %}">
+
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        
+        <header class="header">
+            {% block head %}
+            {% endblock %}
+        </header>
+    
+        <main class="main">
+            {% block content %}
+            {% endblock %}
+        </main>
+    
+        <footer class="footer">
+            {% block footer %}
+            {% endblock %}
+        </footer>
+        
+    </body>
+</html>

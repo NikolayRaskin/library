@@ -1,0 +1,29 @@
+.addForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.addForm__item{
+    align-self: center;
+    margin: 20px;
+}
+.addForm__item label{
+    width: 90px;
+}
+.addForm__item input{
+    display: block;
+    width: 300px;
+    height: 20px;
+    padding: .375rem .95rem;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+.messages{
+    color: red;
+}
