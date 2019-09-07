@@ -1,0 +1,129 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+
+    min-height: 100vh;
+}
+.login-left{
+    display: flex;
+    justify-content: center;
+
+    background-image: url(img/img-auth-big.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: center;
+
+    width: 100%;
+    height: 100vh;
+}
+.login-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #fff;
+    background-clip: border-box;
+
+    // border: 0 solid rgba(0,0,0,.125);
+    // border-radius: 5px;
+    // box-shadow: 0 2px 18px -2px rgba(0,0,0,.5);
+
+    text-align: center;
+
+    width: 40%;
+    height: 100vh;
+}
+.login-left__item{
+    align-self: center;
+    color: #fff;
+
+    margin-right: 50px;
+}
+.login-left__item h1.chilankaFont{
+    font-size: 3.5em;
+}
+.login-left__item h2.chilankaFont{
+    font-size: 2em;
+}
+.login-left__item span.chilankaFont{
+    font-size: 1.5em;
+}
+
+.login-card__item{
+    margin: 30px 0;
+    align-self: center;
+}
+.login-card__item .log-in{
+    font-size: 2em;
+}
+.input-group{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap !important;
+
+    width: 100%;
+
+    margin-top: 20px;
+}
+.input-group__icon{
+    display: flex;
+    justify-content: center;
+
+    background-color:#DCDCDC;
+
+    width: 40px;
+    height: 35px;
+
+    border-radius: 10px 0 0 10px;
+}
+.input-group__icon span{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.input-group input{
+    width: 100%;
+
+    padding: .375rem .95rem;
+    
+    font-size: .875rem;
+    
+    background-color: #fff;
+    background-clip: padding-box;
+    
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.subButton{
+    width: 100%;
+    height: 37px;
+
+    background-color: #4099ff;
+    border-color: #4099ff;
+
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 2px;
+    transition: all 0.5s;
+
+    margin-top: 20px;
+
+    &:hover{
+        transform: scale(1.2);
+        background-color: #0451b7;
+        border-color: #0451b7;
+    }
+}
+.text-muted{
+    color: #6c757d;
+}
+.login-card__item span a{
+    color: black;
+    font-weight: bold;
+}
