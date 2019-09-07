@@ -1,0 +1,78 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 80%;
+  min-height: 800px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.profile-container .profile-container__item {
+  align-self: center;
+  margin: 0;
+  padding: 20px;
+  width: 70%;
+}
+
+.profile-container-logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-container-logo .chilanka-font {
+  align-self: center;
+  margin-top: 20px;
+  font-size: 3em;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons__item {
+  width: 180px;
+  margin-top: 10px;
+}
+
+.line {
+  width: 100%;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+}
+
+.tab-content__item {
+  margin-top: 20px;
+}
+
+.tab-content__info-table {
+  width: 100%;
+}
+
+.tab-content__info td {
+  border-bottom: 1px solid lightgray;
+  padding: 20px;
+}
+
+.tab-content__info .table th, .tab-content__info .table td {
+  border-bottom: 1px solid lightgray;
+  vertical-align: middle;
+}
+
+.tab-content__info .searche-and-add__item {
+  width: 100%;
+}
+
+.tab-content__info .searche-and-add__item_right {
+  justify-content: center;
+}
+
+.tab-content__info .searche-and-add__item_right button {
+  width: 150px;
+}
+
+/*# sourceMappingURL=profile.css.map */

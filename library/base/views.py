@@ -50,6 +50,13 @@ def index(request):
     }
     return render(request,'base/index.html',context)
 
+def user_profile(request, id):
+    thisUser = User_Profile.objects.get(pk = id)
+    context = {
+        'thisUser':thisUser,
+    }
+    return render(request,'base/user_profile.html',context)
+
 def removeUser(request, id):
     user = User.objects.get(pk = id)
     user.delete()
