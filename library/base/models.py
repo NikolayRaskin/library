@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
+from django.core.exceptions import ValidationError
+
+import datetime
 
 class User_Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -11,5 +14,11 @@ class User_Profile(models.Model):
     
     def __str__(self):
         return self.user_firstname + ' ' + self.user_lastname
+    
+    def save(self, *args, **kwargs):
+        today = datetime.date.today()
+        if self.birth_date >= today:
+            raise ValidationError('Birth Date isn\'t valid!')
+        super().save(*args, **kwargs)  # Call the "real" save() method.
 
 # Create your models here.

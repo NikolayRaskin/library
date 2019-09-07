@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.http import Http404
+from django.core.exceptions import ValidationError
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
@@ -39,4 +41,16 @@ def registration(request):
 
 @login_required
 def index(request):
-    return render(request,'base/index.html')
+    try:
+        users = User_Profile.objects.all()
+    except User_Profile.DoesNotExist:
+        return Http404('User doesn\'t exist!')
+    context = {
+        'users':users,
+    }
+    return render(request,'base/index.html',context)
+
+def removeUser(request, id):
+    user = User.objects.get(pk = id)
+    user.delete()
+    return redirect('index')
