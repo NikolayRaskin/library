@@ -11,9 +11,4 @@ class User_Profile(models.Model):
     
     def __str__(self):
         return self.user.first_name + ' ' + self.user.last_name
-    
-    def save(self, *args, **kwargs):
-        today = datetime.date.today()
-        if self.birth_date >= today:
-            raise ValidationError('Birth Date isn\'t valid!')
-        super().save(*args, **kwargs)  # Call the "real" save() method.
+

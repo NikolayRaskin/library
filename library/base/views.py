@@ -31,7 +31,7 @@ def registration(request):
                 new_reg_user = new_user(form)
                 new_reg_user.save()
                 login(request,new_reg_user.user)
-                return redirect('/')
+                return redirect('index')
             except IntegrityError:
                 messages.info(request, 'Login already exists!')
             except EmailExists:
