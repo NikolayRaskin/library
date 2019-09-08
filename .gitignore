@@ -1,0 +1,5 @@
+library/base/__pycache__/
+library/user_profile/__pycache__/
+library/library/__pycache__/
+library/base/migrations/__pycache__/
+library/user_profile/migrations/__pycache__/
