@@ -26,9 +26,9 @@
   font-size: 3em;
 }
 
-.buttons {
+.button {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .buttons__item {
