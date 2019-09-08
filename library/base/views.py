@@ -9,8 +9,27 @@ from django.contrib.auth.decorators import login_required
 from base.models import User_Profile, Book
 from .regForm import RegForm
 
+from rest_framework import viewsets
+from base.serializers import User_ProfileSerializer, BookSerializer
+
 import re
 import datetime
+
+
+class User_ProfileViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = User_Profile.objects.all()
+    serializer_class = User_ProfileSerializer
+
+
+class BookViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
 
 def registration(request):
     if request.method == 'POST':
