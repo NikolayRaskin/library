@@ -1,12 +1,12 @@
 {% extends 'base/base.html' %}
 {% load static %}
-{% block title %}{{thisUser.user_lastname}} {{thisUser.user_firstname}}{% endblock %}
+{% block title %}{{thisUser.user.last_name}} {{thisUser.user.first_name}}{% endblock %}
 
 {% block content %}
 <section class="profile-container container">
     <section class="profile-container__item">
         <div class="profile-container-logo">
-            <div class="chilanka-font">{{thisUser.user_lastname}} {{thisUser.user_firstname}}</div>
+            <div class="chilanka-font">{{thisUser.user.last_name}} {{thisUser.user.first_name}}</div>
         </div>
         <div class="button">
             <a href="{% url 'removeUser' thisUser.user.id %}"><button type="button" class="btn btn-danger buttons__item">Remove User</button></a>
@@ -16,7 +16,7 @@
     <section class="profile-container__item">
         <div class="thisUser-info">
             <div class="tab-content__item">
-                <h2>{{thisUser.user_firstname}}'s Books</h2>
+                <h2>{{thisUser.user.first_name}}'s Books</h2>
                 <div class="tab-content__info">
                     <table class="table table-hover" id="info-table">
                         <thead>

@@ -88,7 +88,6 @@ DATABASES = {
         'NAME': 'test1',
         'USER' : 'nikolayraskin',
         'PASSWORD' : 'delet123',
-       
     }
 }
 

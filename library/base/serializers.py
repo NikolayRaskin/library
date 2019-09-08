@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
-from base.models import User_Profile, Book
+from base.models import User_Profile
+from user_profile.models import Book
 from rest_framework import serializers
 
 

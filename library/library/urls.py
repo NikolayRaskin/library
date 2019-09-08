@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from base.views import *
+from user_profile.views import *
 
 router = routers.DefaultRouter()
 router.register(r'users', User_ProfileViewSet)
