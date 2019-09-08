@@ -88,9 +88,9 @@ DATABASES = {
         'NAME': 'test1',
         'USER' : 'nikolayraskin',
         'PASSWORD' : 'delet123',
-       
     }
 }
+
 
 
 # Password validation

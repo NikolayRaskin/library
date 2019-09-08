@@ -5,8 +5,18 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from base.models import User_Profile, Book
+from base.models import User_Profile
+from user_profile.models import Book
 from .addBookForm import addBookForm
+
+from rest_framework import viewsets
+from base.serializers import User_ProfileSerializer, BookSerializer
+class BookViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows books to be viewed or edited.
+    """
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
 
 @login_required
 def user_profile(request, id):
