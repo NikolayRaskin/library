@@ -1,0 +1,4 @@
+2019-09-08 16:02:16.169 +03 [43708] FATAL:  data directory "/Users/nikolayraskin/Desktop/djangoProject/git/library/library/./postgres" has invalid permissions
+2019-09-08 16:02:16.169 +03 [43708] DETAIL:  Permissions should be u=rwx (0700) or u=rwx,g=rx (0750).
+2019-09-08 16:02:32.545 +03 [43713] FATAL:  data directory "/Users/nikolayraskin/Desktop/djangoProject/git/library/library/./postgres" has invalid permissions
+2019-09-08 16:02:32.545 +03 [43713] DETAIL:  Permissions should be u=rwx (0700) or u=rwx,g=rx (0750).

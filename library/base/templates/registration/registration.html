@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+    
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="login-left">
+        <div class="login-left__item">
+            <h2 class="chilankaFont">Innowise Group Library</h2>
+            <h1 class="chilankaFont">Welcom!</h1>
+            <span class="chilankaFont">Create your account.</span>
+        </div>
+    </div>
+    <div class="login-card">
+        <div class="login-card__item">
+            <span class="log-in">Register</span>
+        </div>
+        <div class="addForm__item">
+            <form class="form" method="POST" action="{% url 'registration' %}">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="subButton">Sign In</button>
+                {% if form.errors %}
+                    <span style="color:red;">Invalid Form!</span>
+                {% endif %}
+            </form>
+            {% if messages %}
+                <div class="addForm__item messages">
+                    {% for message in messages %}
+                    <p>
+                        {{ message }}
+                    </p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

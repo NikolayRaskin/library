@@ -1,0 +1,75 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}{{thisUser.user.last_name}} {{thisUser.user.first_name}}{% endblock %}
+
+{% block content %}
+<section class="profile-container container">
+    <section class="profile-container__item">
+        <div class="profile-container-logo">
+            <div class="chilanka-font">{{thisUser.user.last_name}} {{thisUser.user.first_name}}</div>
+        </div>
+        <div class="button">
+            <a href="{% url 'removeUser' thisUser.user.id %}"><button type="button" class="btn btn-danger buttons__item">Remove User</button></a>
+        </div>
+    </section>
+    <hr class="line">
+    <section class="profile-container__item">
+        <div class="thisUser-info">
+            <div class="tab-content__item">
+                <h2>{{thisUser.user.first_name}}'s Books</h2>
+                <div class="tab-content__info">
+                    <table class="table table-hover" id="info-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Title</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if books %}
+                                {% for post in books %}
+                                <tr>
+                                    <th scope="row">{{post.id}}</th>
+                                    <td>{{post.author}}</td>
+                                    <td>{{post.title}}</td>
+                                    <td><a href="{% url 'editBook' post.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></a></td>
+                                    <td><a href="{% url 'removeBook' post.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></a></td>
+                                </tr>
+                                {% endfor %}
+                            {% else %}
+                            <tr>
+                                <td colspan="7" class="noContentTd">No books</td>
+                            </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                    <form class="addForm" method="POST" action="{% url 'user_profile' thisUser.id %}">
+                        {% csrf_token %}
+                        <div class="addForm__item">
+                            {{form.as_p}}
+                        </div>
+                        <div class="addForm__item">
+                                <button type="submit" class="btn  btn-warning add-customer">Add book</button>
+                        </div>
+                        {% if messages %}
+                        <div class="addForm__item messages">
+                            {% for message in messages %}
+                            <p>
+                                {{ message }}
+                            </p>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
