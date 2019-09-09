@@ -346,7 +346,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$150000$f16inMhK41JR$F2I9F9QARKoOZH87FZjsfD9A+LlfOaxniEUoX74xs60=",
-    "last_login": "2019-09-08T13:16:38.151Z",
+    "last_login": "2019-09-09T05:31:01.279Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -396,11 +396,29 @@
   }
 },
 {
+  "model": "auth.user",
+  "pk": 17,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$1DLZZvz2oqL3$zHjYZd/r9x29h7c+hXKTiU0OrxZjPiOqg7Z/4OnRjHQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Nikolay123",
+    "first_name": "lol",
+    "last_name": "kek",
+    "email": "n.woots98@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-09-08T17:31:55.274Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
   "model": "sessions.session",
-  "pk": "jaseosi190c40sb32dxk9hwb5t3bboia",
+  "pk": "g3ohppu6886n2ys7se236eoi9pi4jl6t",
   "fields": {
     "session_data": "ZDU2NWQ1NDcyMWRmNjUyMTY2MGMwNTg0MGU0ZjM0ZTMxN2UwZGQ5Yjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIyNGJhYjU0Y2RiMjk0MjRkMWQ3OWM4MzQzMTY1NzdiNGUyOTFhODBhIn0=",
-    "expire_date": "2019-09-22T13:16:38.153Z"
+    "expire_date": "2019-09-23T05:31:01.283Z"
   }
 },
 {

@@ -13,12 +13,12 @@ class BookModelTest(TestCase):
         self.thisUser = User_Profile.objects.create(user = user, birth_date = date)
         self.book = Book.objects.create(owner = self.thisUser, title = 'testBook', author = 'testAuthor')
 
-    def test_first_name_max_length(self):
+    def test_title_max_length(self):
         book = Book.objects.get(id=self.book.id)
         max_length = book._meta.get_field('title').max_length
         self.assertEquals(max_length, 100)
 
-    def test_last_name_max_length(self):
+    def test_author_max_length(self):
         book = Book.objects.get(id=self.book.id)
         max_length = book._meta.get_field('author').max_length
         self.assertEquals(max_length, 100)

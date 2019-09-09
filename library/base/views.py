@@ -52,27 +52,33 @@ def index(request):
         users = User_Profile.objects.all()
     except User_Profile.DoesNotExist:
         return Http404('User doesn\'t exist!')
-    if request.method == 'POST':
-        form = RegForm(request.POST)
-        if form.is_valid():
-            try:
-                new_user(form).save()
-            except IntegrityError:
-                messages.info(request, 'Login already exists!')
-            except EmailExists:
-                messages.info(request, 'Email already exists!')
-            except PassAndConfirmDontMatch:
-                messages.info(request, 'Pass and confirm pass don\'t match!')
-            except ValidationError:
-                messages.info(request, 'Birth date is\'t valid!')
-            return redirect('/')
+    
+    if request.user.is_superuser:
+        if request.method == 'POST':
+            form = RegForm(request.POST)
+            if form.is_valid():
+                try:
+                    new_user(form).save()
+                except IntegrityError:
+                    messages.info(request, 'Login already exists!')
+                except EmailExists:
+                    messages.info(request, 'Email already exists!')
+                except PassAndConfirmDontMatch:
+                    messages.info(request, 'Pass and confirm pass don\'t match!')
+                except ValidationError:
+                    messages.info(request, 'Birth date is\'t valid!')
+                return redirect('/')
+            else:
+                messages.info(request, 'Invalid form!')
         else:
-            messages.info(request, 'Invalid form!')
+            form = RegForm()
     else:
-        form = RegForm()
+        form = 0
+
     context = {
         'users':users,
         'form':form,
+        'currentUser':User()
     }
     return render(request,'base/index.html',context)
 
