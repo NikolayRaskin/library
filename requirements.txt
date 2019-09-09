@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 Django=>2.2
 PostgreSQL=>11.5
 python=>3.7.1
 djangorestframework=>3.10.3
-=======
-Django==2.2.4
-PostgreSQL==11.5
-python==3.7.1
-djangorestframework==3.10.3
->>>>>>> 31d35c1b627548a45fa84cd503e78469426e4888
