@@ -1,0 +1,101 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+  min-height: 100vh;
+}
+
+.container {
+  align-self: center;
+  background-color: #fff;
+  box-shadow: 0 2px 18px -2px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  width: 95%;
+  height: 100%;
+  margin-top: 20px;
+}
+
+.searche-and-add {
+  display: flex;
+  padding: 20px;
+}
+
+.search {
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 5px;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+}
+
+.searche-and-add__item {
+  display: flex;
+  align-self: center;
+}
+
+.searche-and-add__item_search {
+  flex-direction: column;
+}
+
+.searche-and-add__item_right {
+  justify-content: flex-end;
+  width: 24%;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.customer-name-and-img {
+  display: flex;
+  vertical-align: center;
+}
+
+.customer-name-and-img__item_span {
+  margin-left: 10px;
+}
+
+.customer-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.listOfCustomers .table td, .listOfCustomers .table th {
+  vertical-align: middle;
+  border-top: 0;
+}
+
+.table .badge {
+  font-size: 100%;
+}
+
+.badge-light-success {
+  background: rgba(46, 216, 182, 0.2);
+  border-color: #c4f4eb;
+  color: #2ed8b6;
+}
+
+.badge-light-danger {
+  background: rgba(255, 83, 112, 0.2);
+  border-color: #ffcfd7;
+  color: #ff5370;
+}
+
+.noContentTd {
+  text-align: center;
+}
+
+.warnigText {
+  text-align: center;
+  color: red;
+  width: 100%;
+  display: none;
+}
+
+/*# sourceMappingURL=main.css.map */

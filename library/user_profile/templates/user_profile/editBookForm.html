@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Edit book{% endblock %}
+
+{% block content %}
+<section class="profile-container container">
+    <form class="addForm" method="POST" action="{% url 'editBook' id %}">
+        {% csrf_token %}
+        <div class="addForm__item">
+            {{form.as_p}}
+        </div>
+        <div class="addForm__item">
+            <button type="submit" class="btn  btn-warning add-customer">Edit book</button>
+        </div>
+        {% if messages %}
+        <div class="addForm__item messages">
+            {% for message in messages %}
+            <p>
+                {{ message }}
+            </p>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </form>              
+</section>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
